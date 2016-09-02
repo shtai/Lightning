@@ -1,40 +1,39 @@
 int startX = mouseX;
 int startY = 0;
-int endX = mouseX + (int)((Math.random()-0.5)*18);
-int endY = 0;
-int backRed = (int)(Math.random()*255);
-int backGreen = (int)(Math.random()*255);
-int backBlue = (int)(Math.random()*255);
-
+int endY;
+int endX;
 void setup()
-{
+{	
+	int backRed = (int)(Math.random()*255);
+	int backGreen = (int)(Math.random()*255);
+	int backBlue = (int)(Math.random()*255);
 	background(backRed, backGreen, backBlue);
     size(400,400);
+    frameRate(500);
 }
 
 void draw()
 {	
-	lightning();
+
 }
 
 void mousePressed()
 {
-	lightning();
+	
+	lightning(mouseX, 0);
 }
 
-void lightning()
+void lightning(int x, int y)
 {
-	int red = (int)(Math.random() *255);
-	int green = (int)(Math.random() *255);
-	int blue = (int)(Math.random() *255);
-	stroke(red, green, blue);
-    endX = endX + (int)((Math.random()-0.5)*18);
-    endY = endY + (int)(Math.random()*12);
-    line (startX, startY, endX, endY);
-    startX = endX;
-    startY = endY;
-    if (endY > 400)
-    {
-    	noLoop();
-    }
+	stroke(255, 215, 0);
+	strokeWeight(3);
+	while (endY < 400)
+	{
+		endX = endX + (int)((Math.random()-0.5)*18);
+    	endY = endY + (int)(Math.random()*25);
+		startX = endX;
+   		startY = endY;
+   		line (x, y, endX, endY);
+    	
+	}
 }
