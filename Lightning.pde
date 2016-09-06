@@ -35,12 +35,7 @@ void lightning()
 		startY = endY;
 		endX = endX + (int)((Math.random()-0.5)*18);
 		endY = endY + (int)(Math.random()*20);
-		line(startX, startY, endX, endY);
-		System.out.println("startX: "+startX);
-		System.out.println("startY: "+startY);
-		System.out.println("endX: "+endX);
-		System.out.println("endY: "+endY);
-	
+		line(startX +50, startY, endX+50, endY);
 	}
 	if (endY >= 400)
 	{
