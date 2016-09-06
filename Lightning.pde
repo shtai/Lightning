@@ -42,7 +42,7 @@ void lightning()
 		System.out.println("endY: "+endY);
 	
 	}
-	if (endY > 400)
+	if (endY >= 400)
 	{
 		endY = 0;
 	}
